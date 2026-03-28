@@ -23,3 +23,23 @@
 
 早期项目名为`Cashbook`，增加AI功能后，独立建设并改名为`Jimily`，并继续沿用版本号。Cashbook已经更新至 V4，所以Jimily的首个版本从V5开始。
 
+## 部署（docker-compose）
+
+- docker-compose.yaml
+
+```yaml
+services:
+  main:
+    container_name: jimily
+    image: dingdangdog/jimily:5.1.2
+    restart: always
+    # network_mode: "host"
+    volumes:
+      - ./data:/app/data # 数据挂载到本地
+    environment:
+      DATABASE_URL: "postgresql://postgres:123456@localhost:5432/jimily?schema=public" # 数据库链接，【账号密码请自行修改，与你的数据库一致！】
+      NUXT_DATA_PATH: "/app/data" # 数据存储位置，不懂不要改，现在只有小票图片
+      NUXT_AUTH_SECRET: "demo2026" # 前台登录加密使用的密钥 【自行修改！】
+    ports:
+      - 9090:9090
+```
