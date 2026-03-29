@@ -25,6 +25,10 @@
 
 ## 部署（docker-compose）
 
+请自行准备Postgre数据库，建议17版本！
+
+一个简单的部署教程：https://www.lodenhu.com/post/cashbook-5-beta-ai-version-deployment-tutorial
+
 - docker-compose.yaml
 
 ```yaml
