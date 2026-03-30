@@ -35,15 +35,17 @@
 services:
   main:
     container_name: jimily
-    image: dingdangdog/jimily:5.1.2
+    image: dingdangdog/jimily:5.1.3
     restart: always
     # network_mode: "host"
     volumes:
       - ./data:/app/data # 数据挂载到本地
     environment:
       DATABASE_URL: "postgresql://postgres:123456@localhost:5432/jimily?schema=public" # 数据库链接，【账号密码请自行修改，与你的数据库一致！】
-      NUXT_DATA_PATH: "/app/data" # 数据存储位置，不懂不要改，现在只有小票图片
+      # NUXT_DATA_PATH: "/app/data" # 数据存储位置，现在只有小票图片，没有特别的需求不建议修改，因为与数据卷配置需要同步修改
       NUXT_AUTH_SECRET: "demo2026" # 前台登录加密使用的密钥 【自行修改！】
+      NUXT_ENV: "development" # 如果使用公网+域名部署，建议改为 production，修改为 production 后只能通过 https 登录
     ports:
       - 9090:9090
+
 ```
