@@ -4,6 +4,7 @@
 </div>
 
 <p align="center">
+  <img alt="release" src="https://img.shields.io/github/v/release/dingdangdog/jimily-release" />
   <img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/dingdangdog/jimily.svg" />
 </p>
 
