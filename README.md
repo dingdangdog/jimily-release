@@ -32,10 +32,12 @@
 
 ### 环境要求
 
-- Linux 服务器（脚本依赖 bash、cron、curl、GNU sed）
 - 已安装 [Docker](https://docs.docker.com/engine/install/) 与 [Docker Compose V2](https://docs.docker.com/compose/install/)（命令为 `docker compose`）
-- **服务器需能正常访问 [Docker Hub](https://hub.docker.com/)**（镜像托管于 `dingdangdog/jimily`）。若网络无法连通 Docker Hub，`docker compose pull` 会失败，容器将无法启动或升级。国内服务器若拉取缓慢或超时，请自行配置镜像加速、代理，或先在可访问 Docker Hub 的环境下载镜像后再导入部署机
-- 使用自动更新脚本时，还需能访问 [GitHub](https://github.com/)（用于查询 Release 版本）
+
+> 其他要求：
+> - 建议 Linux 服务器（脚本依赖 bash、cron、curl、GNU sed），否则无法试用自动更新脚本。
+> - **服务器需能正常访问 [Docker Hub](https://hub.docker.com/)**（镜像托管于 `dingdangdog/jimily`）。若网络无法连通 Docker Hub，`docker compose pull` 会失败，容器将无法启动或升级。国内服务器若拉取缓慢或超时，请自行配置镜像加速、代理，或先在可访问 Docker Hub 的环境下载镜像后再导入部署机
+> - 使用自动更新脚本时，还需能访问 [GitHub](https://github.com/)（用于查询 Release 版本）
 
 ### 第一步：准备部署目录
 
